@@ -7,10 +7,10 @@ public class Module {
 	private String id;
 	private ArrayList<Student> students = new ArrayList<Student>();
 	
-	public Module(String name, String id, ArrayList<Student> students){
+	public Module(String name, String id, Student... students){
 		this.setName(name);
 		this.setId(id);
-		this.setStudents(students);
+		setStudents(students);
 	}
 
 	public String getName() {
@@ -33,7 +33,9 @@ public class Module {
 		return students;
 	}
 
-	public void setStudents(ArrayList<Student> students) {
-		this.students = students;
+	public void setStudents(Student[] students) {
+		for (Student student: students) {
+		 this.students.add(student);
+		}
 	}	
 }
