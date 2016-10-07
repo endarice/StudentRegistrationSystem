@@ -9,11 +9,11 @@ public class Course {
 	private LocalDate startDate;
 	private LocalDate endDate;
 	
-	public Course(String name, ArrayList<Module> modules, LocalDate startDate, LocalDate endDate) {
+	public Course(String name, LocalDate startDate, LocalDate endDate, Module... modules) {
 		this.setName(name);
-		this.setModules(modules);
 		this.setStartDate(startDate);
 		this.setEndDate(endDate);
+		this.setModules(modules);
 	}
 
 	public String getName() {
@@ -22,14 +22,6 @@ public class Course {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public ArrayList<Module> getModules() {
-		return modules;
-	}
-
-	public void setModules(ArrayList<Module> modules) {
-		this.modules = modules;
 	}
 
 	public LocalDate getStartDate() {
@@ -46,5 +38,15 @@ public class Course {
 
 	public void setEndDate(LocalDate endDate) {
 		this.endDate = endDate;
+	}
+
+	public ArrayList<Module> getModules() {
+		return modules;
+	}
+	
+	public void setModules(Module[] modules) {
+		for (Module module: modules) {
+		 this.modules.add(module);
+		}
 	}
 }
