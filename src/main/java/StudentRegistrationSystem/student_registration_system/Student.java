@@ -88,10 +88,10 @@ public class Student {
 				Student += getModules().get(i);
 			}
 			else if(i == getModules().size()-2) {
-				Student += getModules().get(i) + "and";
+				Student += getModules().get(i) + " and ";
 			}
 			else {
-				Student += getModules().get(i) + ",";
+				Student += getModules().get(i) + ", ";
 			}
 		}
 		return Student;
