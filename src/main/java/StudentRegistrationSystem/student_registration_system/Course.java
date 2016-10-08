@@ -50,4 +50,8 @@ public class Course {
 			module.setCourse(this);
 		}
 	}
+	
+	public String toString() {
+		return getName();
+	}
 }

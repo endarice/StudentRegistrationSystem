@@ -51,4 +51,8 @@ public class Module {
 	public void setCourse(Course course) {
 		this.course = course;
 	}	
+	
+	public String toString() {
+		return getName() + " (" + getId() + ")";
+	}
 }
