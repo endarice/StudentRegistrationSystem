@@ -82,6 +82,10 @@ public class Student {
 	}	
 	
 	public String toString() {
-		return "Student " + getId() + " (" + getName() + ") is enrolled in " + getCourse() + "and takes the modules " + getModules();
+		String Student = "Student " + getId() + " (" + getName() + ") is enrolled in " + getCourse() + " and takes the modules ";
+		for (Module module: getModules()) {
+			Student += module;
+		}
+		return Student;
 	}
 }
