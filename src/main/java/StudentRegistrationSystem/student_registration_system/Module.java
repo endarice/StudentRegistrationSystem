@@ -38,9 +38,6 @@ public class Module {
 		this.students = students;
 		for(Student student: students) {
 			student.setModule(this);
-			if(student.getCourse() == null) {
-				student.setCourse(this.course);
-			}
 		}
 	}
 
@@ -50,6 +47,11 @@ public class Module {
 
 	public void setCourse(Course course) {
 		this.course = course;
+		for(Student student: this.students) {
+			if(student.getCourse() == null) {
+				student.setCourse(this.course);
+			}
+		}
 	}	
 	
 	public String toString() {
