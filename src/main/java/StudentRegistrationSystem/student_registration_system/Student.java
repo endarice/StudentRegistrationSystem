@@ -80,4 +80,8 @@ public class Student {
 	public void setCourse(Course course) {
 		this.course = course;
 	}	
+	
+	public String toString() {
+		return "Student " + getId() + " (" + getName() + ") is enrolled in " + getCourse() + "and takes the modules " + getModules();
+	}
 }
