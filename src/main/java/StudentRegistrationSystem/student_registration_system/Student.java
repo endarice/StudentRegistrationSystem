@@ -83,8 +83,16 @@ public class Student {
 	
 	public String toString() {
 		String Student = "Student " + getId() + " (" + getName() + ") is enrolled in " + getCourse() + " and takes the modules ";
-		for (Module module: getModules()) {
-			Student += module;
+		for (int i=0; i<getModules().size(); i++) {
+			if(i == getModules().size()-1) {
+				Student += getModules().get(i);
+			}
+			else if(i == getModules().size()-2) {
+				Student += getModules().get(i) + "and";
+			}
+			else {
+				Student += getModules().get(i) + ",";
+			}
 		}
 		return Student;
 	}
