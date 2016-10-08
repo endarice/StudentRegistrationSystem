@@ -1,5 +1,7 @@
 package StudentRegistrationSystem.student_registration_system;
 
+import java.util.ArrayList;
+
 import org.joda.time.LocalDate;
 
 public class Student {
@@ -8,6 +10,8 @@ public class Student {
 	private LocalDate dob;
 	private int id;
 	private String username;
+	private ArrayList<Module> modules = new ArrayList<Module>();
+	private Course course;
 	
 	public Student(String name, int age, LocalDate dob, int id) {
 		this.name = name;
@@ -15,6 +19,10 @@ public class Student {
 		this.dob = dob;
 		this.id = id;
 		setUsername();
+	}
+
+	public void setModule(Module module) {
+		this.modules.add(module);
 	}
 	
 	public String getName() {
@@ -55,5 +63,21 @@ public class Student {
 
 	public void setUsername() {
 		this.username = new StringBuilder().append(this.name).append(this.age).toString();
+	}
+
+	public ArrayList<Module> getModules() {
+		return modules;
+	}
+	
+	public void setModules(ArrayList<Module> modules) {
+		this.modules = modules;
+	}
+
+	public Course getCourse() {
+		return course;
+	}
+
+	public void setCourse(Course course) {
+		this.course = course;
 	}	
 }

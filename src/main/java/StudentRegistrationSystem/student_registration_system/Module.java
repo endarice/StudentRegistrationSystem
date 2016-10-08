@@ -6,8 +6,9 @@ public class Module {
 	private String name;
 	private String id;
 	private ArrayList<Student> students = new ArrayList<Student>();
+	private Course course;
 	
-	public Module(String name, String id, Student... students){
+	public Module(String name, String id, ArrayList<Student> students){
 		this.setName(name);
 		this.setId(id);
 		setStudents(students);
@@ -33,9 +34,21 @@ public class Module {
 		return students;
 	}
 
-	public void setStudents(Student[] students) {
-		for (Student student: students) {
-		 this.students.add(student);
+	public void setStudents(ArrayList<Student> students) {
+		this.students = students;
+		for(Student student: students) {
+			student.setModule(this);
+			if(student.getCourse() == null) {
+				student.setCourse(this.course);
+			}
 		}
+	}
+
+	public Course getCourse() {
+		return course;
+	}
+
+	public void setCourse(Course course) {
+		this.course = course;
 	}	
 }
